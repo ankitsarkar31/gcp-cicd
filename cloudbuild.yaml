@@ -5,10 +5,13 @@ steps:
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-central1-docker.pkg.dev/ankit-playground-449806/flask-app/flask']
-# Deploy container image to Cloud Run
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  entrypoint: gcloud
-  args: ['run', 'deploy', 'runwithcicd', '--image', 'us-central1-docker.pkg.dev/ankit-playground-449806/flask-app/flask', '--region', 'us-central1', '--allow-unauthenticated']
+# deploy container image to GKE
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --image=us-central1-docker.pkg.dev/ankit-playground-449806/flask-app/flask
+  - --location=us-central1
+  - --cluster=alpha
 images:
 - us-central1-docker.pkg.dev/ankit-playground-449806/flask-app/flask
 options:
