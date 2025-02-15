@@ -11,3 +11,5 @@ steps:
   args: ['run', 'deploy', 'runwithcicd', '--image', 'us-central1-docker.pkg.dev/ankit-playground-449806/flask-app', '--region', 'us-central1', '--allow-unauthenticated']
 images:
 - us-central1-docker.pkg.dev/ankit-playground-449806/flask-app
+options:
+  logging: CLOUD_LOGGING_ONLY
