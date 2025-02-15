@@ -10,6 +10,6 @@ steps:
   entrypoint: gcloud
   args: ['run', 'deploy', 'runwithcicd', '--image', 'us-central1-docker.pkg.dev/ankit-playground-449806/flask-app/flask', '--region', 'us-central1', '--allow-unauthenticated']
 images:
-- us-central1-docker.pkg.dev/ankit-playground-449806/flask-app
+- us-central1-docker.pkg.dev/ankit-playground-449806/flask-app/flask
 options:
   logging: CLOUD_LOGGING_ONLY
