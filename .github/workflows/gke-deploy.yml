@@ -37,14 +37,14 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build, Scan, and Push Backend Docker Image
-        run: |
-          docker build -t ankitsarkar31/test-app:v1 .
-          docker push ankitsarkar31/test-app:v1
+      # - name: Build, Scan, and Push Backend Docker Image
+      #   run: |
+      #     docker build -t ankitsarkar31/test-app:v1 .
+      #     docker push ankitsarkar31/test-app:v1
       
-      - name: Deploy
-        run: |  
-          cd kubernetes
-          kubectl apply -f .
-          kubectl get pods
+      # - name: Deploy
+      #   run: |  
+      #     cd kubernetes
+      #     kubectl apply -f .
+      #     kubectl get pods
 
