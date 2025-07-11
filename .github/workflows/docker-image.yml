@@ -25,5 +25,5 @@ jobs:
       - name: Build, Scan, and Push Backend Docker Image
         run: |
           docker build -t ankitsarkar31/test-app:latest .
-          docker push ankitsarkar31/test:latest
+          docker push ankitsarkar31/test-app:latest
 
